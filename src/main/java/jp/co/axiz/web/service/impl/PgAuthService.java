@@ -1,23 +1,29 @@
-package jp.co.example.service.impl;
+package jp.co.axiz.web.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jp.co.axiz.web.dao.UserDao;
-import jp.co.axiz.web.entity.User;
-import jp.co.axiz.web.service.AuthService;
+import jp.co.axiz.web.dao.LoginDao;
+import jp.co.axiz.web.entity.Login;
 
-@Service //サービス層のクラス（ビジネスロジック等）に付与する。
-public class PgAuthService implements AuthService {
+@Service
+public class PgAuthService {
 
 	@Autowired
-	private UserDao userDao;
+	private LoginDao login;
 
-	@Override //スーパークラスのメソッドをオーバーライドするという注釈
-	public List<User> findAll() {
-		return userDao.findAll();
+	//全件表示
+	public List<Login> findAll (){
+		return login.findAll();
 	}
+
+
+	//IDとPASSを基にadminテーブルに該当するレコードを返す
+	public Login getAdmin_name (String id, String pass) {
+		return login.findByIdAndPass(id, pass);
+	}
+
 
 }
