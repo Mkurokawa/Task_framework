@@ -1,5 +1,9 @@
 package jp.co.axiz.web.service;
 
-public class SelectServise {
+import java.util.List;
 
+import jp.co.axiz.web.entity.User;
+
+public interface SelectServise {
+	public List<User> find(User form);
 }

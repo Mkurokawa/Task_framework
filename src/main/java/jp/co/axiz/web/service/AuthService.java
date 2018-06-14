@@ -1,17 +1,10 @@
 package jp.co.axiz.web.service;
 
-import java.util.List;
-
 import jp.co.axiz.web.entity.Login;
-import jp.co.axiz.web.entity.User;
 
-public interface AuthService {	//DBからidとpassを探すメソッド
-	
-	public Login findByIdAndPass(String admin_id, String password);
-	public static List<Login> findAll() {
+public interface AuthService {
+	public static Login Admin_name(String admin_id,String password) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-	public User getAdmin_name(String id, String pass);
 }
-

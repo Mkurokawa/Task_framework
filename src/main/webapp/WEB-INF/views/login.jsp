@@ -14,10 +14,12 @@
 <p> ${msg} </p>
 <form:form action="menu" modelAttribute="login">
     <div>
-      <label>ID</label><form:input path="id" /><form:errors path="id" cssStyle="color: red"/>
+      <label>ID</label><form:input path="admin_id" />
+      <form:errors path="admin_id" cssStyle="color: red"/>
     </div>
     <div>
-      <label>PASS</label><form:input path="pass" /><form:errors path="pass" cssStyle="color: red"/>
+      <label>PASS</label><form:input path="password" />
+      <form:errors path="password" cssStyle="color: red"/>
     </div>
   	<form:button>ログイン</form:button>
 </form:form>
